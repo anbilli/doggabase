@@ -2,6 +2,7 @@
 #include <algorithm>
 #include <cctype>
 #include <fstream>
+#include <iostream>
 #include <sstream>
 
 using namespace std;
@@ -109,7 +110,7 @@ void doggabase::add_dog() {
 		flag = 0;
 		while (!flag) {
 			cin >> hair;
-			hair = tolower(hair); ///int??
+			//hair = tolower(hair); ///int??
 			flag = check_hair_input(hair);
 		}
 
@@ -145,8 +146,7 @@ void doggabase::add_dog() {
 		cin >> response;
 		lowercase(response);
 	}//while
-
-}
+}//add_dog
 
 void doggabase::delete_dog() {
 	string kill, trash;
@@ -176,7 +176,7 @@ void doggabase::find_match() {
 	double weight_lower, weight_upper;
 
 	cout << "Answer the following questions to find your perfect dog."
-		 << "What hair length do you prefer? Enter short/medium/long as s/m/l: ";
+		 << "What hair length do you prefer? Short, medium, or long? ";
 	while(!flag) {
 		cin >> hair;
 		flag = check_hair_input(hair);
@@ -205,57 +205,186 @@ void doggabase::find_match() {
 	while(!flag) {
 		cin >> train;
 		flag = check_binary_input(train);
-	}
+	} 
 }
 
 void doggabase::search_trait() {
 	int search;
 	bool flag = 0;
+	vector<int> v;
+	vector<int>* results = &v;
+
 	cout << "Search by:\n"
 		 << "(1) Weight 		(2) Hair length\n"
 		 << "(3) Guard skills 	(4) Good with kids\n"
-		 << "(5) Easy to train\n"
-		 << "Please enter the number corresponding to the search you"
-		 << "would like to perform: ";
+		 << "(5) Easy to train  	(6) Breed\n"
+		 << "Please enter the number corresponding to the search\n"
+		 << "you would like to perform: ";
 	
 	while(!flag) {
 		cin >> search;
-		if(search > 5 || search < 1) {
+		if(search > 6 || search < 1) {
 			cout << "Please enter a valid number: ";
 		}
 		else { flag = 1; }
 	}
-	search_trait_helper(search);
+	search_trait_promt(search, results);
 
-}
+	cout << '\n' << results->size() << " dogs found:\n";
+	for(unsigned i = 0; i < results->size(); ++i) {
+		dog& d = catalog[(*results)[i]];
+		print_dog(d);
+	}
+}//search_trait
 
-void search_trait_helper(int s) {
-
+void doggabase::search_trait_promt(int s, vector<int>*& v_out) {
 	switch(s) {
 		case 1: {
-			
+			double lower, upper;
+			cout << "Please enter a minimum weight: ";
+			cin >> lower;
+			cout << "Please enter a maximum weight: ";
+			cin >> upper;
+			search_weight(lower, upper, v_out);
 			break;
 		}
 		case 2: {
+			string hair;
+			cout << "What type of hair length are you searching for?\n"
+				 << "Short, medium, or long? ";
+			cin >> hair;
+			search_hair(hair, v_out);
 			break;
 		}
 		case 3: {
+			string response;
+			cout << "Are you searching for a dog with strong guard skills? (yes/no): ";
+			cin >> response;
+			search_guard(response, v_out);
 			break;
 		}
 		case 4: {
+			string response;
+			cout << "Are you searching for a dog compatible with children? (yes/no): ";
+			cin >> response;
+			search_kids(response, v_out);
 			break;
 		}
 		case 5: {
-
+			string response;
+			cout << "Are you searching for a dog with strong training skills? (yes/no): ";
+			cin >> response;
+			search_train(response, v_out);
 			break;
 		}
+		case 6: {
+			string response, trash;
+			cout << "Enter keywords to describe the breed of the dog: ";
+			getline(cin, trash);
+			getline(cin, response);
+			search_keyword(response, v_out);
+			break;
+		}
+	}//switch
+}//search_trait_prompt
+
+void doggabase::search_keyword(string& s, vector<int>*& v_out) {
+	bool first = 0;
+	string word;
+	lowercase(s);
+	stringstream ss(s);
+
+	while(ss >> word) {
+		if(keyword_map.find(word) != keyword_map.end()) {
+			vector<int>& list = keyword_map[word];
+			if(!first) {
+				v_out->assign(list.begin(), list.end());
+				first = 1;
+			}
+			else {
+				auto it = set_intersection(v_out->begin(), v_out->end()
+					, list.begin(), list.end(), v_out->begin());
+				v_out->resize(it - v_out->begin());
+				if(v_out->empty()) { break; }
+			}
+		}//if
+	}//while
+}//search_keyword
+
+void doggabase::search_train(string& response, vector<int>*& v_out) {
+	lowercase(response);
+	int train = to_bool(response);
+	if(train == -1) {
+		cout << "Incorrect response to 'training' search.\n";
+	}
+	else if(train == 0) {
+		v_out = &train_list[0];
+	}
+	else {
+		v_out = &train_list[1];
 	}
 }
 
-/*bool doggabase::name_comparator(const dog& a, const dog& b) {
-	return a.name < b.name;
-}*/
+void doggabase::search_kids(string& response, vector<int>*& v_out) {
+	lowercase(response);
+	int kids = to_bool(response);
+	if(kids == -1) {
+		cout << "Incorrect response to 'children' search.\n";
+	}
+	else if(kids == 0) {
+		v_out = &kids_list[0];
+	}
+	else {
+		v_out = &kids_list[1];
+	}
+}
 
+void doggabase::search_guard(string& response, vector<int>*& v_out) {
+	lowercase(response);
+	int guard = to_bool(response);
+	if(guard == -1) {
+		cout << "Incorrect response to 'guard' search.\n";
+	}
+	else if(guard == 0) {
+		v_out = &guard_list[0];
+	}
+	else {
+		v_out = &guard_list[1];
+	}
+}
+
+void doggabase::search_hair(string& hair, vector<int>*& v_out) {
+	lowercase(hair);
+	if(hair == "short") {
+		v_out = &hair_list[0];
+	}
+	else if(hair == "medium") {
+		v_out = &hair_list[1];
+	}
+	else if(hair == "long") {
+		v_out = &hair_list[2];
+	}
+	else {
+		cout << "Incorrect hair type.\n";
+	}
+}
+
+void doggabase::search_weight(double lower, double upper, vector<int>*& v_out) {
+	weight_comp w_cmp;
+	auto out_it = v_out->begin();
+	dog lower_dog = dog(0, '0', 0, 0, 0, lower, "0");
+	dog upper_dog = dog(0, '0', 0, 0, 0, upper, "0");
+
+	sort(catalog.begin(), catalog.end(), w_cmp);
+	v_out->resize(catalog.size());
+
+	auto dog_start = lower_bound(catalog.begin(), catalog.end(), lower_dog, w_cmp);
+	auto dog_end = upper_bound(catalog.begin(), catalog.end(), upper_dog, w_cmp);
+	for(auto dog_it = dog_start; dog_it < dog_end; ++dog_it, ++out_it) {
+		*out_it = dog_it->id;
+	}
+	v_out->resize(out_it - v_out->begin());
+}
 
 void doggabase::browse() {
 	string response;
@@ -264,18 +393,21 @@ void doggabase::browse() {
 	while(!flag) {
 		cin >> response;
 		if(response == "alphabetical") {
-			name_comp cmp;
-			sort(catalog.begin(), catalog.end(), cmp);
+			name_comp n_cmp;
+			sort(catalog.begin(), catalog.end(), n_cmp);
 			flag = 1;
 		}
 		else if(response == "original") {
+			id_comp i_cmp;
+			sort(catalog.begin(), catalog.end(), i_cmp);
 			flag = 1;
 		}
 		else {
 			cout << "Please enter 'alphabetical' or 'original': ";
 		}
 	}
-	if(!flag) {
+	//flag = 0;
+	//if(!flag) {
 		if(catalog.size() > 100) {
 			string response;
 			cout << "Are you sure you want to do this? There are "
@@ -293,7 +425,7 @@ void doggabase::browse() {
 				print_dog(i);
 			}
 		}
-	}
+	//}
 }
 void doggabase::print_dog(dog& d) {
 		cout << endl << d.name

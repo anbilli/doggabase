@@ -2,12 +2,9 @@
 #define DOGGABASE_H
 
 #include <array>
-#include <iostream>
 #include <string>
 #include <unordered_map>
 #include <vector>
-
-#include <iostream>
 
 //RUN WITH g++ -std=c++14 -Wconversion -Wall -Werror -Wextra -pedantic doggabase.cpp -o dog
 
@@ -38,6 +35,18 @@ private:
 		}
 	};
 
+	struct id_comp {
+		bool operator()(const dog& a, const dog& b) {
+			return a.id < b.id;
+		}
+	};
+
+	struct weight_comp {
+		bool operator()(const dog& a, const dog& b) {
+			return a.weight < b.weight;
+		}
+	};
+
 	//Member functions
 	void add_dog(); 
 	void add_to_keymap(const std::string& s, int idx); //X
@@ -46,8 +55,15 @@ private:
 	void find_match();
 	void print_dog(dog& d);
 	void read_data(const std::string& input_file); //X
+	void search_guard(std::string& response, std::vector<int>*& v_out);
+	void search_hair(std::string& hair, std::vector<int>*& v_out);
+	void search_keyword(std::string& s, std::vector<int>*& v_out);
+	void search_kids(std::string& response, std::vector<int>*& v_out);
 	//void run(const std::string& data_file);
+	void search_train(std::string& response, std::vector<int>*& v_out);
 	void search_trait(); //int option, depending on opt, further cin
+	void search_trait_promt(int s, std::vector<int>*& v_out);
+	void search_weight(double lower, double upper, std::vector<int>*& v_out);
 	void update_dog(dog& d); //X
 	//bool name_comparator(const dog& a, const dog& b);
 
