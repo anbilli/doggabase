@@ -6,20 +6,20 @@
 #include <unordered_map>
 #include <vector>
 
-//RUN WITH g++ -std=c++14 -Wconversion -Wall -Werror -Wextra -pedantic doggabase.cpp -o dog
+//Compile using:
+//g++ -std=c++14 -Wconversion -Wall -Werror -Wextra -pedantic doggabase.cpp main.cpp -o dog
+//Run using: ./dog dog_data.txt
 
 class doggabase {
 private:
-
-
 	//Dog member class
 	class dog {
 	public:
 		int id;
 		char hair;
-		bool guard; //good guard dog
-		bool kids; //exceptionally good with children
-		bool train; //exceptionally easy to train
+		bool guard;
+		bool kids;
+		bool train;
 		double weight;
 		std::string name;
 
@@ -28,44 +28,43 @@ private:
 			: id(id_in), hair(hair_in), guard(guard_in), kids(kids_in)
 			, train(train_in), weight(weight_in), name(name_in) {}
 	};
-
+	// Name comparator
 	struct name_comp {
 		bool operator()(const dog& a, const dog& b) {
 			return a.name < b.name;
 		}
 	};
-
+	//ID comparator
 	struct id_comp {
 		bool operator()(const dog& a, const dog& b) {
 			return a.id < b.id;
 		}
 	};
-
+	//Weight comparator
 	struct weight_comp {
 		bool operator()(const dog& a, const dog& b) {
 			return a.weight < b.weight;
 		}
 	};
 
-	//Member functions
+	//Private member functions
 	void add_dog(); 
-	void add_to_keymap(const std::string& s, int idx); //X
-	void browse(); //alphab or original as input
+	void add_to_keymap(const std::string& s, int idx);
+	void browse();
 	void delete_dog();
 	void find_match();
+	void print_by_id(std::vector<int>& print);
 	void print_dog(dog& d);
-	void read_data(const std::string& input_file); //X
+	void read_data(const std::string& input_file);
 	void search_guard(std::string& response, std::vector<int>*& v_out);
 	void search_hair(std::string& hair, std::vector<int>*& v_out);
 	void search_keyword(std::string& s, std::vector<int>*& v_out);
 	void search_kids(std::string& response, std::vector<int>*& v_out);
-	//void run(const std::string& data_file);
 	void search_train(std::string& response, std::vector<int>*& v_out);
-	void search_trait(); //int option, depending on opt, further cin
+	void search_trait();
 	void search_trait_promt(int s, std::vector<int>*& v_out);
 	void search_weight(double lower, double upper, std::vector<int>*& v_out);
-	void update_dog(dog& d); //X
-	//bool name_comparator(const dog& a, const dog& b);
+	void update_dog(dog& d);
 
 	//Containers
 	std::vector<dog> catalog;
@@ -79,13 +78,9 @@ public:
 	//Database constructor
 	doggabase(const std::string& input_file) {
 		read_data(input_file);
-		//init_maps();
 	}
+	//Public member functions
 	void run();
-
 };
-
-
-
 
 #endif //DOGGABASE_H

@@ -21,3 +21,341 @@ Saluki| s no yes no 44
 Spanish Greyhound| s no no no 55
 Sloughi| s yes no no 52.5
 Azawakh| s no no no 46
+Irish Wolfhound| m yes yes no 105
+Deerhound| m no yes yes 90
+Whippet| s no yes no 28.5
+Hungarian Greyhound| s no yes yes 58.5
+American Staghound| m no yes yes 82.5
+Lurcher| s no yes no 65
+Rampur Greyhound| s no yes no 60.75
+Italian Greyhound| s no yes no 7.5
+Bloodhound| s no yes no 95
+Harrier| s no yes no 54
+Grand Anglo-Francais Blanc et Noir| s no yes no 77
+Grand Anglo-Francais Tricolore| s no yes no 77
+Francais Blanc et Noir| s no yes no 77
+Francais Tricolore| s no yes no 77
+Grand Bleu de Gascogne| s no yes no 74
+Petit Bleu de Gascogne| s no yes no 44
+Petit Griffon de Gascogne| no yes no 41
+Basset Bleu de Gascogne| no yes no 37.5
+Chien D'Artois| s no yes no 46.5
+Ariegeois| s no yes yes 60.5
+Griffon Nivernais| m no yes no 52.5
+Basset Artesien Normand| s no yes no 33
+Grand Gascon-Saintongeois| s no yes yes 68.5
+Anglo-Francais de Petit Venerie| s no yes no 39.5
+Griffon Fauve de Bretagne| m no yes yes 44.25
+Basset Fauve de Bretagne| m no yes no 38
+Grand Griffon Vendeen| m no yes yes 71.5
+Briquet Griffon Vendeen| m no yes no 50.5
+Grand Basset Griffon Vendeen| m no yes no 42
+Petit Basset Griffon Vendeen| m yes no yes 35.5
+English Foxhound| s no no no 65
+Otterhound| m no no no 92.5
+Basset Hound| s no yes no 50
+Beagle| s no yes no 24.5
+Dunker| s no yes no 42
+Haldenstovare| s no yes no 57.5
+Hygenhund| s yes no no 48.5
+Finnish Hound| s no yes no 50
+Hamiltonstovare| s no yes no 55
+Smalandsstovare| s no yes yes 36.5
+Schillerstovare| s no yes no 46.5
+Drever| s yes no yes 33
+American Foxhound| s no yes no 70
+Catahoula Leopard Dog| s no no no 45
+Plott Hound| s no yes no 50
+Treeing Walker Coonhound| s no yes no 60
+Black-and-Tan Coonhound| s no yes no 62.5
+Bluetick Coonhound| s no yes no 62.5
+English Coonhound| s no yes no 52.5
+Redbone Coonhound| s no yes no 60
+Kerry Beagle| s no yes no 52.5
+Beagle Harrier| s no yes yes 49.5
+American Water Spaniel| m no yes yes 35
+Segugio Italiano| s no yes yes 51
+Sabueso Espanol| s no no yes 50
+Polish Hound| s no yes yes 63
+Black Forest Hound| s no no yes 38.5
+Bosnian Rough-Coated Hound| m yes yes yes 44
+Istrian Smooth-Coated Hound| s no yes yes 37.5
+Istrian Rough-Coated Hound| m yes yes no 39
+Poitevin| s no yes no 66
+Posavac Hound| s no yes no 40
+Yugoslavian Mountain Dog| m no yes no 49.5
+Yugoslavian Tricolored Hound| s no yes no 49.5
+Balkan Hound| s no yes no 44
+Alpine Dachsbracke| s no yes yes 36.5
+Styrian Rough-Haired Mountain Hound| s no yes yes 36.5
+Bruno Jura Hound| s no yes no 39.5
+St. Hubert Jura Hound| s no yes no 39.5
+Transylvanian Hound| s no yes yes 60
+Berner Laufhund| s no yes no 39.5
+Luzerner Laufhund| s no yes no 39.5
+Schwyzer Laufhund| s no yes no 39.5
+Doberman| s no no yes 77
+Bavarian Mountain Hound| no yes yes 66
+Rhodesian Ridgeback| s yes no no 75
+Hanoverian Hound| s no yes yes 91.5
+Billy| s no yes yes 64
+Porcelaine| s no yes no 58.5
+Niederlaufhund| s no yes no 26
+Alaskan Malamute| m no no no 105
+Eskimo Dog| m no no no 82.5
+Siberian Husky| m no no no 47.5
+Greenland Dog| l yes no no 68
+Pomeranian| l yes yes yes 4.75
+Volpino| l yes yes no 10
+Papillon| l yes yes yes 9.5
+Phalene| l yes yes yes 9.5
+Russo-European Laika| m yes no no 47.5
+East Siberian Laika| m yes no no 45
+West Siberian Laika| m yes no no 45
+Karelian Bear Dog| m yes no no 47
+Finnish Spitz| m no no no 33
+Lapinporokoira| s yes no yes 63
+Finnish Lapphund| l yes no yes 45.5
+Norwegian Elkhound| m no no yes 47
+Black Norwegian Elkhound| s no no no 39.5
+Swedish Lapphund| l no no no 44
+Swedish Elkhound| m no no yes 66
+Keeshound| l yes yes no 59.5
+German Wolfspitz| l no no no 65
+German Spitz| l yes no no 15.5
+Japanese Akita| m no no no 92.5
+Ainu Dog| m no no no 55
+Kai Dog| m yes no no 37.5
+Jindo| m no no no 37.5
+Japanese Spitz| l yes yes yes 12
+Samoyed| l no yes no 58
+Eurasier| l no no no 55
+Chow Chow| l no no no 57.5
+Chinook| m yes no no 77.5
+Shinoku| m no no no 41
+Schipperke| m yes no yes 13.5
+Shiba Inu| m yes yes no 20
+Iceland Sheepdog| m yes no yes 25
+Norwegian Buhund| m yes yes yes 55.5
+Lundehund| s yes yes no 13
+Nordic Spitz| s yes no no 29.5
+Airedale Terrier| s yes no no 47
+Irish Terrier| s yes no no 26
+Welsh Terrier| s yes no no 21
+Kerry Blue Terrier| m yes no no 35
+Border Terrier| s yes yes no 13.25
+Lakeland Terrier| m yes no no 16
+Smooth Fox Terrier| s yes no no 17
+Wire Fox Terrier| s no no no 17
+English Toy Terrier| s yes no no 7
+Manchester Terrier| s yes no no 16.5
+Patterdale Terrier| s no no no 12
+Plummer Terrier| s no no no 13.5
+German Hunting Terrier| s no no no 21
+Czesky Terrier| l yes no no 15
+Kromfohrlander| m no yes yes 26
+Japanese Terrier| s yes no no 11.5
+Cairn Terrier| m yes yes no 14.5
+Norfolk Terrier| m yes yes yes 13
+Norwich Terrier| m yes yes no 11.5
+West Highland White Terrier| l yes yes no 18.5
+Scottish Terrier| l yes no no 21
+Skye Terrier| l yes no no 21
+Sealyham Terrier| l yes no no 19
+Dandie Dinmont Terrier| m yes yes no 21
+Yorkshire Terrier| l yes no no 6
+Australian Silky Terrier| l yes no no 9.5
+Australian Terrier| l yes no no 13
+American Staffordshire Terrier| s yes no no 45
+American Pit Bull Terrier| s no no no 55
+American Toy Terrier| s yes no no 5.75
+Boston Terrier| s no yes no 17.5
+Miniature Pinscher| s yes no yes 9
+Austrian Pinscher| s yes no no 33
+Affenpinscher| l yes yes no 7.5
+German Pinscher| s yes no no 30
+Griffon Bruxellois| m no yes yes 9
+Miniature Schnauzer| l no yes no 14
+Glen of Imaal Terrier| m yes no no 35
+Soft-Coated Wheaten Terrier| l yes yes no 40
+Bedlington Terrier| s yes yes no 20
+Black Russian Terrier| m yes no no 115.5
+Parson Jack Russel Terrier| s no no no 15
+Jack Russel Terrier| s yes no no 12
+Staffordshire Bull Terrier| s yes yes no 31
+Bull Terrier| s yes yes no 57
+Miniature Bull Terrier| s yes yes no 28.5
+Dutch Smoushond| l yes yes yes 21
+Dachshund| s yes no no 20
+Hungarian Puli| l yes no yes 27.5
+Portuguese Water Dog| l yes no yes 45
+Spanish Water Dog| l yes no no 35
+Irish Water Spaniel| l no yes yes 55
+Standard Poodle| l no yes yes 57.5
+Barbet| l no yes no 44
+Wetterhoun| m yes yes no 38.5
+Epagneul Pont-Audemer| m no yes no 46.5
+Chesapeake Bay Retriever| s no yes yes 65
+Curly-Coated Retriever| s no yes yes 75
+Corded Poodle| l yes yes yes 57.25
+Hungarian Vizsla| s no yes yes 57.25
+Labrador Retriever| s no yes yes 65
+Flat-Coated Retriever| m no yes yes 70
+English Pointer| s no yes yes 55
+Golden Retriever| m no yes yes 70
+Nova Scotia Duck-Tolling Retriever| l no yes yes 44
+Kooikerhondje| l no yes yes 22
+English Springer Spaniel| l no yes yes 51
+Wesh Springer Spaniel| l no yes yes 40
+Field Spaniel| l no yes yes 42.5
+Sussex Spaniel| l no yes yes 40
+Clumber Spaniel| l no yes yes 72.5
+German Spaniel| m no yes yes 55
+American Cocker Spaniel| l no yes yes 26
+English Cocker Spaniel| l no yes yes 30
+Small Munsterlander| m yes yes yes 33
+Large Munsterlander| m yes yes yes 60
+Dutch Partridge Dog| m yes yes yes 47.5
+Stabyhoun| l yes yes yes 38.5
+Brittany| m no yes yes 30.5
+Blue Picardy Spaniel| m no yes yes 44
+Picardy Spaniel| m no yes yes 44
+French Spaniel| m no yes yes 49.5
+English Setter| l no yes yes 63
+Gordon Setter| l no yes yes 60.5
+Irish Setter| l no yes no 65
+Irish Red-and-White Setter| l no yes no 65
+German Pointer| m no yes yes 65
+Czesky Fousek| s no yes yes 61.75
+Wirehaired Pointing Griffon| m no yes yes 55
+Weimaraner| s no yes yes 78
+Spanish Pointer| s no yes yes 60.5
+Portuguese Pointer| s no yes yes 47.5
+Bracco Italiano| s no yes no 71.5
+Italian Spinone| m no yes yes 76.5
+French Gascony Pointer| m no yes yes 58
+French Pyrenean Pointer| s no yes yes 58
+Saint-Germain Pointer| s no yes yes 48.5
+Bourbonnais Pointer| s no yes yes 48.5
+Old Danish Pointer| s no yes yes 46.5
+Pudelpointer| s no yes yes 55
+Ariege Pointer| s no yes yes 60
+Slovensky Pointer| s no yes yes 66
+German Shepherd Dog| m yes no yes 85
+Groenendale| l yes no yes 62
+Laekenois| m yes yes yes 62
+Malinois| m yes yes yes 62
+Tervueren| l yes no yes 62
+Border Collie| l no yes yes 39.5
+Rough Collie| l no yes yes 53
+Smooth Collie| s no yes yes 53
+Shetland Sheepdog| l no yes yes 15
+Bearded Collie| l no yes no 50
+Old English Sheepdog| l yes yes no 66
+Cardigan Welsh Corgi| s yes no no 31.5
+Pembroke Welsh Corgi| s yes no no 23
+Australian Kelpie| s no no no 35
+Australian Cattle Dog| s yes no no 40
+Australian Shepherd Dog| l no yes yes 52.5
+Lancashire Heeler| s yes no no 9.5
+Pumi| s yes no no 27.5
+Komondor| l yes no no 107.5
+Hungarian Kuvasz| m yes no no 90.5
+Slovensky Kuvac| m yes no no 82.5
+Giant Schnauzer| s yes no yes 73.5
+Schnauzer| s yes no yes 33
+Mudi| m no yes no 23.5
+Croatian Sheepdog| m no no no 32
+Appenzell Mountain Dog| s yes no no 62.5
+Bernese Mountain Dog| m yes no no 88.5
+Entelbuch Mountain Dog| s yes no no 60.5
+Great Swiss Mountain Dog| s yes no no 132.5
+Ca De Bou| s no no no 79
+Ca De Bestiar| s yes no no 82.5
+Canary Dog| s no no no 95
+Catalan Sheepdog| l no yes yes 40
+Estrela Mountain Dog| m yes no no 88
+Portuguese Cattle Dog| s yes no no 62.5
+Portuguese Watchdog| s yes no no 102.5
+Portuguese Shepherd Dog| l no yes yes 33
+Briard| l yes no no 75
+Beauceron| s no no no 75.5
+Picardy Shepherd| l yes yes yes 60
+Dutch Sheepdog| l no yes yes 33
+Czech Wolfdog| s no no no 60.5
+Saarloos Wolfhound| s yes no yes 84.5
+Dutch Shepherd Dog| m yes yes yes 66
+Bergamasco| l yes no no 72.5
+Maremma Sheepdog| m no no no 84
+Istrian Shepherd| l yes no no 74.5
+Illyrian Sheepdog| l yes no no 67.5
+Argentinean Mastiff| s no no no 90
+Brazilian Mastiff| s yes no no 100
+Spanish Mastiff| m yes no no 137.5
+Neapolitan Mastiff| s yes no no 130
+Bulldog| s no yes no 52.5
+Bullmastiff| s yes no no 110
+Mastiff| s yes no no 182.5
+French Mastiff| s yes no no 90
+Boxer| s no yes yes 62.5
+Great Dane| s no yes no 110
+Rottweiler| s yes no yes 100
+Shar Pei| s no no no 40
+Tosa Inu| s no no no 198.5
+Tibetan Kyi Apso| m yes no no 80
+Tibetan Mastiff| m yes no no 160
+Hovawart| m yes no yes 72.5
+Leonberger| m no no yes 92.5
+Landseer| l no yes no 130
+St. Bernard| s no yes no 155
+Newfoundland| l no yes yes 130
+Pyrenean Sheepdog| l no yes yes 25.5
+Pyrenean Mountain Dog| l yes no no 111
+Pyrenean Mastiff| l yes no yes 143
+Polish Lowland Sheepdog| l no no no 32.5
+Tatra Mountain Sheepdog| l yes no no 125.5 
+Central Asian Sheepdog| m no no no 95
+Caucasian Sheepdog| l yes no no 126.5
+Anatolian Dog| s no no no 115.5
+Akbash Dog| m no no no 105.5
+Bouvier des Flandres| m yes no no 74
+Swedish Vallhund| s yes no no 30
+Cane Corso| s yes no no 110
+Aidi| m yes no no 52.5
+South Russian Sheepdog| l yes no no 143
+Alapaha Blue Blood Bulldog| s yes no no 70
+New Zealand Huntaway| s no yes yes 52.5
+Bichon Frise| l no yes yes 9.5
+Maltese| l no yes no 5
+Havanese| l no yes yes 10
+Bolognese| l no yes no 7
+Chihuahua| s yes no no 4
+Coton de Tulear| l yes yes no 13.5
+Lowchen| l no yes no 13.5
+Lhasa Apso| l yes yes no 14
+Shih Tzu| l no yes no 13
+Kyi Leo| l yes yes no 14
+Pekingese| l no yes no 9.5
+Japanese Chin| l yes yes no 7.5
+King Charles Spaniel| m no yes no 11
+Cavalier King Charles Spaniel| m no yes yes 14
+Tibetan Terrier| l yes yes no 24
+Tibetan Spaniel| m yes yes no 12
+Chinese Crested| s no yes no 8.5
+French Bulldog| s yes yes no 25
+Pug| s yes yes no 16
+American Bulldog| s yes no no 97.5
+Olde English Bulldogge| s yes no no 85
+Poodle| l no yes yes 37.5
+Dalmatian| s no yes no 52.5
+Labradoodle| m no yes yes 66
+Bichon| l no yes yes 10
+Cockerpoo| m no yes yes 22
+Bull Boxer| s no yes yes 45
+North American Shepherd| l no yes yes 22.5
+Himalayan Sheepdog| s yes no no 70
+Thai Ridgeback| s no no no 63
+Danish Chicken Dog| s yes yes no 27
+Lucas Terrier| m yes yes no 12
+Shiloh Shepherd| m yes no no 120
+Prazsky Krysarik| s yes yes no 4

@@ -1,0 +1,15 @@
+Dingo| m no no no 33
+New Guinea Singing Dog| m no no no 20
+Canaan Dog| s yes yes yes 45
+Podenco Canario| s no no no 42
+Basenji| s no yes no 22.5
+Perivian Inca Orchid| s no yes no 38
+Inca Hairless Dog| s no yes no 32
+Carolina Dog| m no no no 35
+Standard Mexican Hairless| s no yes no 25.5
+Miniature Mexican Hairless| s no yes no 17
+Toy Mexican Hairless| s no yes no 13.5
+Pharaoh Hound| s no no no 50
+Cirneco Dell'Etna| s no no no 22
+Ibizan Hound| s no no no 48.5
+Podengo Portugueso Medio| m yes no no 39.5
