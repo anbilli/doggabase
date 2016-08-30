@@ -19,6 +19,7 @@ void welcome();
 ///// MEMBER FUNCTIONS /////
 ////////////////////////////
 
+//Allows user to add dog to database
 void doggabase::add_dog() {
 	string response = "yes";
 
@@ -27,12 +28,13 @@ void doggabase::add_dog() {
 		bool flag = 0;
 		bool guard, kids, train;
 		double weight;
-		string name, hair, string_weight, trash;
+		string breed, hair, string_weight, trash;
+
 		cout << "Please enter in the following data "
 			 << "or '0' if you wish to cancel.\n"
 			 << "Dog's Breed: ";
 
-		//Name	
+		//Breed	
 		getline(cin, trash); 
 		getline(cin, name, '\n');
 		if(name == "0") {
@@ -53,8 +55,8 @@ void doggabase::add_dog() {
 					cin >> string_weight;
 				}
 			}
-		}
-		
+		}	
+
 		//Hair
 		cout << "What hair length does this dog have?\n"
 			 << "Enter short, medium, or long: ";
@@ -111,6 +113,7 @@ void doggabase::add_dog() {
 void doggabase::add_to_keymap(const string& name, int idx) {
 	string word;
 	stringstream ss(name);
+
 	while(ss >> word) {
 		lowercase(word);
 		auto& v = keyword_map[word];
@@ -120,11 +123,14 @@ void doggabase::add_to_keymap(const string& name, int idx) {
 	}
 }//add_to_keymap
 
+//Displays entire database catalog
 void doggabase::browse() {
 	string response;
 	bool flag = 0;
+
 	cout << "Would you like to view the catalog"
 		 << " in alphabetical or original order? ";
+
 	while(!flag) {
 		cin >> response;
 		if(response == "alphabetical") {
@@ -147,30 +153,33 @@ void doggabase::browse() {
 			 << catalog.size() << " entries. (yes/no): ";
 		cin >> response;
 		lowercase(response);
+
 		if(to_bool(response)) { 
 			for(auto& i: catalog) {
 				print_dog(i);
 			}
 		}
-	}//if
+	}
 	else {
 		for(auto& i: catalog) {
 			print_dog(i);
 		}
 	}
-}
+}//browse
 
+//Allows user to remove a dog from database
 void doggabase::delete_dog() {
 	string kill, trash;
-	cout << "Please enter the name of the dog you would like\n"
+	cout << "Please enter the breed of the dog you would like\n"
 		 << "to remove from the database or '0' to cancel: ";
 	getline(cin, trash);
 	getline(cin, kill);
+
 	if(kill != "0") {
 		bool flag = 0;
 		for(unsigned i = 0; i < catalog.size(); ++i) {
-			if(catalog[i].name == kill) {
-				cout << catalog[i].name << " removed.\n";
+			if(catalog[i].breed == kill) {
+				cout << catalog[i].breed << " removed.\n";
 				catalog.erase(catalog.begin() + i);
 				flag = 1;
 				break;
@@ -180,8 +189,9 @@ void doggabase::delete_dog() {
 			cout << kill << " could not be found.\n";
 		}
 	}
-}
+}//delete_dog
 
+//Uses criteria to search for specified dog
 void doggabase::find_match() {
 	string hair, response;
 	double weight_lower, weight_upper;
@@ -235,6 +245,8 @@ void doggabase::find_match() {
 	print_by_id(results);
 }//find_match
 
+//Prints the dogs corresponding to the ID numbers
+// contained in the given vector 
 void doggabase::print_by_id(vector<int>& print) {
 	id_comp i_cmp;
 	sort(catalog.begin(), catalog.end(), i_cmp);
@@ -246,8 +258,9 @@ void doggabase::print_by_id(vector<int>& print) {
 	}
 }
 
+//Prints a single dog
 void doggabase::print_dog(dog& d) {
-		cout << endl << d.name
+		cout << endl << d.breed
 			 << "\nAve. Weight: " << d.weight << " lbs"
 			 << "\nHair Length: ";
 		if(d.hair == 's') { cout << "short"; }
@@ -262,7 +275,7 @@ void doggabase::print_dog(dog& d) {
 		cout << endl;
 }
 
-
+//Opens a given file, reads in and processes data
 void doggabase::read_data(const string& input_file) {
 	//Open file
 	ifstream fin;
@@ -271,23 +284,24 @@ void doggabase::read_data(const string& input_file) {
 		cerr << "Failed to open " << input_file << endl;
 		exit(1);
 	}
-	string name, guard, kids, train, trash;
+	string breed, guard, kids, train, trash;
 	char hair;
 	double weight;
-	for(int i = 0; getline(fin, name, '|'); ++i) {
+	for(int i = 0; getline(fin, breed, '|'); ++i) {
 		fin >> hair >> guard >> kids >> train >> weight;
 		catalog.push_back(dog(i, hair, to_bool(guard), to_bool(kids)
-			, to_bool(train), weight, name));
+			, to_bool(train), weight, breed));
 		update_dog(catalog[i]);
 		getline(fin, trash);
 	}//for
 	cout << "Read in " << catalog.size() << " entries." << endl;
 }//read_data
 
+//Main menu prompts user for desired operation
 void doggabase::run() {
-	//User interface
-	welcome();
 	int selection = 1;
+	welcome();
+
 	while(selection != 0) {
 		cout << "-----------------------------------------------------------\n"
 			 << "(1) Search by trait 		(2) Find the perfect match\n"
@@ -317,6 +331,7 @@ void doggabase::run() {
 	}//while
 }//run
 
+//Finds list of dogs with strong guarding skills
 void doggabase::search_guard(string& response, vector<int>*& v_out) {
 	bool guard;
 	bool flag = 0;
@@ -332,6 +347,7 @@ void doggabase::search_guard(string& response, vector<int>*& v_out) {
 	}
 }
 
+//Finds list of dogs with specified hair length
 void doggabase::search_hair(string& hair, vector<int>*& v_out) {
 	bool flag = 0;
 	while(!flag) {
@@ -348,6 +364,7 @@ void doggabase::search_hair(string& hair, vector<int>*& v_out) {
 	}
 }
 
+//Finds dogs with matching keywords in breed title
 void doggabase::search_keyword(string& s, vector<int>*& v_out) {
 	bool first = 0;
 	string word;
@@ -371,6 +388,7 @@ void doggabase::search_keyword(string& s, vector<int>*& v_out) {
 	}//while
 }//search_keyword
 
+//Finds list of dogs compatible with kids
 void doggabase::search_kids(string& response, vector<int>*& v_out) {
 	bool kids;
 	bool flag = 0;
@@ -386,6 +404,7 @@ void doggabase::search_kids(string& response, vector<int>*& v_out) {
 	}
 }
 
+//Finds list of dogs with strong training skills
 void doggabase::search_train(string& response, vector<int>*& v_out) {
 	bool train;
 	bool flag = 0;
@@ -401,6 +420,7 @@ void doggabase::search_train(string& response, vector<int>*& v_out) {
 	}
 }
 
+//Menu to search for dogs by specific categories
 void doggabase::search_trait() {
 	int search;
 	bool flag = 0;
@@ -428,6 +448,7 @@ void doggabase::search_trait() {
 	}
 }//search_trait
 
+//Processes desired category search
 void doggabase::search_trait_promt(int s, vector<int>*& v_out) {
 	switch(s) {
 		case 1: {
@@ -482,6 +503,7 @@ void doggabase::search_trait_promt(int s, vector<int>*& v_out) {
 	}//switch
 }//search_trait_prompt
 
+//Finds list of dogs within specified weight range (lbs)
 void doggabase::search_weight(double lower, double upper, vector<int>*& v_out) {
 	weight_comp w_cmp;
 	dog lower_dog = dog(0, '0', 0, 0, 0, lower, "0");
@@ -500,6 +522,7 @@ void doggabase::search_weight(double lower, double upper, vector<int>*& v_out) {
 	v_out->resize(out_it - v_out->begin());
 }
 
+//Stores dog ID in categorized containers for quicker search features
 void doggabase::update_dog(dog& d) {
 	//Array '1' corresponds to a 'yes' response list
 	// while array '0' corresponds to a 'no' response list
@@ -509,18 +532,21 @@ void doggabase::update_dog(dog& d) {
 		else { kids_list[0].push_back(d.id); }
 	if(d.train) { train_list[1].push_back(d.id); }
 		else { train_list[0].push_back(d.id); }
+
 	//Array '0' corresponds to short, '1' to medium
 	// and '2' to long hair categories
 	if(d.hair == 's') { hair_list[0].push_back(d.id); }
 		else if(d.hair == 'm') { hair_list[1].push_back(d.id); }
 			else { hair_list[2].push_back(d.id); }
-	add_to_keymap(d.name, d.id);
-}
+
+	add_to_keymap(d.breed, d.id);
+}//update_dog
 
 ////////////////////////////
 ///// HELPER FUNCTIONS /////
 ////////////////////////////
 
+//Checks that user input is either 'yes' or 'no'
 bool check_binary_input(string& in, bool& var) {
 	lowercase(in);
 	if(to_bool(in) == 1) { 
@@ -536,6 +562,7 @@ bool check_binary_input(string& in, bool& var) {
 	}
 }
 
+//Checks user input for appropriate hair category
 bool check_hair_input(string& h) {
 	lowercase(h);
 	if(h != "short" && h != "medium" && h != "long") {
@@ -546,6 +573,7 @@ bool check_hair_input(string& h) {
 	return 1;
 }
 
+//Prints yes/no for corresponding bool variable
 void from_bool(bool b) {
 	if(b) {	cout << "yes"; }
 	else { cout << "no"; }
@@ -557,12 +585,14 @@ void lowercase(string& s) {
     	return tolower(c); });
 }
 
+//Converts yes or no response to integer value
 int to_bool(const string& response) {
 	if(response == "yes") { return 1; }
 	else if(response == "no") { return 0; }
 	else { return -1; }
 }
 
+//Prints welcome message
 void welcome() {
 	cout << "┈╭━╱▔▔▔╱▔▔▔╲┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈┈\n"
 		 << "┈┃╭▏┊┊┊▏▏▕▎▍╮┈┈ WELCOME TO THE WORLD FAMOUS ┈\n"
@@ -574,4 +604,3 @@ void welcome() {
 		 << "the appropriate dog. For further questions, please refer \n"
 		 << "to the help section.\n";
 }
-

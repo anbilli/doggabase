@@ -6,10 +6,6 @@
 #include <unordered_map>
 #include <vector>
 
-//Compile using:
-//g++ -std=c++14 -Wconversion -Wall -Werror -Wextra -pedantic doggabase.cpp main.cpp -o dog
-//Run using: ./dog dog_data.txt
-
 class doggabase {
 private:
 	//Dog member class
@@ -21,17 +17,17 @@ private:
 		bool kids;
 		bool train;
 		double weight;
-		std::string name;
+		std::string breed;
 
 		dog(int id_in, char hair_in, bool guard_in, bool kids_in, 
-			bool train_in, double weight_in, std::string name_in)
+			bool train_in, double weight_in, std::string breed_in)
 			: id(id_in), hair(hair_in), guard(guard_in), kids(kids_in)
-			, train(train_in), weight(weight_in), name(name_in) {}
+			, train(train_in), weight(weight_in), breed(breed_in) {}
 	};
-	// Name comparator
-	struct name_comp {
+	// breed comparator
+	struct breed_comp {
 		bool operator()(const dog& a, const dog& b) {
-			return a.name < b.name;
+			return a.breed < b.breed;
 		}
 	};
 	//ID comparator
