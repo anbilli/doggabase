@@ -1,3 +1,5 @@
+# Doggabase
+
 This program is designed to process data of various dog
 breeds and perform advanced searches to help the user find
 the appropriate dog.
